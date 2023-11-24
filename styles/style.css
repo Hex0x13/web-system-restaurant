@@ -1,0 +1,111 @@
+@font-face {
+    font-family: fredoka;
+    src: url("../Fredoka-VariableFont_wdth\,wght.ttf");
+}
+
+html, *, *::after, *::before {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+    color: rgb(235, 52, 119);
+    font-family: fredoka;
+}
+
+body {
+    height: 100vh;
+    width: 100vw;
+    background: transparent;
+}
+
+.menu-body {
+    background-color: rgb(255, 255, 204);
+}
+
+nav {
+    background-color: rgb(12, 38, 53);
+    background-image: linear-gradient(to right, rgb(12, 38, 53) 30%, rgb(10, 36, 39));
+    height: 160px;
+}
+
+main {
+    background-image: url("../image/brick-wall-1834784_1920.jpg");
+    width: 100%;
+    height: 100%;
+    z-index: 0;
+}
+
+nav .my-nav-item {
+    font-size: 20px;
+    color: rgba(255, 255, 255, 0.6);
+    transition: all 150ms;
+    cursor: pointer;
+}
+
+.my-nav-item.active {
+    color: white;
+}
+
+nav .my-nav-item:hover {
+    color: rgb(235, 52, 119);
+}
+
+nav .my-nav-item:active {
+    transform: scale(0.98);
+}
+
+.main-text {
+    background-image: linear-gradient(90deg, rgb(235, 52, 119), rgb(243, 205, 135));
+    color: transparent;
+    background-clip: text;
+    -webkit-background-clip: text;
+    font-weight: bolder;
+    font-size: 38px;
+    width: 230px;
+    text-align: center;
+    position: relative;
+}
+
+.main-text::after {
+    content: "Come Taste Innovation at its Finest";
+    color: transparent;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 230px;
+    font-size: 38px;
+    text-shadow: 1px 1px black,
+            -1px -1px black,
+            -1px 1px black,
+            1px -1px black;
+    z-index: -1;
+}
+
+.sub-text {
+    text-align: center;
+    color: rgb(243, 205, 135);
+    font-weight: bolder;
+    font-size: 22px;
+    text-shadow: 1px 1px black, 
+        -1px -1px black, 
+        -1px 1px black, 
+        1px -1px black;
+}
+
+.order-now-btn {
+    background-color: rgb(235, 52, 119);
+    color: rgb(255, 234, 190);
+    border: none;
+    border-radius: 24px;
+    padding: 5px 20px;
+    transition: all 300ms;
+}
+
+.order-now-btn:hover {
+    color: rgb(235, 52, 119);
+    background-color: rgb(255, 234, 190);
+}
+
+.order-now-btn:active {
+    transform: scale(1.05);
+}
