@@ -58,7 +58,7 @@ nav .my-nav-item {
 }
 
 nav .my-nav-item:hover {
-    color: rgb(235, 52, 119);
+    color: rgb(255, 167, 182);
 }
 
 nav .my-nav-item:active {
@@ -104,6 +104,20 @@ nav .my-nav-item:active {
         1px -1px black;
 }
 
+.shop-address, .open-hrs {
+    color: rgb(255, 192, 192);
+    font-weight: 500;
+    text-shadow: 1px 1px black, 1px -1px black,
+                -1px 1px black, -1px -1px black;
+    margin: 0;
+    padding: 0;
+    text-align: center;
+}
+
+.shop-address {
+    margin-bottom: 20px;
+}
+
 .order-now-btn {
     background-color: rgb(235, 52, 119);
     color: rgb(255, 234, 190);
@@ -142,18 +156,19 @@ img[src="./image/chef.png"] {
     border-radius: 24px;
     width: 80%;
     padding: 40px;
+    justify-content: center;
 }
 
-.main-menu li {
-    flex: 1;
-    margin: 30px;
+.main-menu > li {
+    margin: 20px;
     list-style: none;
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    max-width: 620px;
+    display: flex;
+    min-width: 500px;
+    max-width: 600px;
+    flex: 1;
 }
 
-.main-menu li > h3 {
+.main-menu > li h3 {
     font-size: 16px;
     font-weight: 500;
     display: flex;
@@ -161,18 +176,63 @@ img[src="./image/chef.png"] {
     align-items: end;
     border-bottom: 1px dotted black;
     color: rgb(8, 114, 133);
+    max-width: 300px;
 }
 
-.main-menu li > p {
+.main-menu > li p {
     color: rgb(8, 114, 133);
     text-align: justify;
+    max-width: 300px;
 }
 
 .price {
     color: rgb(241, 64, 64);
 }
 
-.main-menu li > img {
-    width: 256px;
-    grid-row: span 2;
+.main-menu > li img {
+    object-fit: contain;
+    object-position: top;
+    width: 200px;
+    height: 120px;
+    margin-right: 10px;
+}
+
+.main-menu > li div {
+    flex: 1;
+}
+
+.contact-us {
+    border: none;
+    background: pink;
+    margin: auto;
+    margin-top: 64px;
+    width: clamp(300px, 60%, 800px);
+    border-radius: 24px;
+    padding: 40px;
+}
+
+.contact-us h2 {
+    text-align: center;
+    margin-bottom: 32px;
+    color: inherit;
+    font-weight: 900;
+    text-shadow: 1px 1px black,
+        1px -1px black,
+        -1px 1px black,
+        -1px -1px black;
+}
+
+.tts-icon {
+    height: 28px;
+    width: 28px;
+}
+
+.tts-text {
+    text-decoration: none;
+    color: rgb(7, 7, 7);
+}
+
+.tts-map {
+    width: 100%;
+    margin: auto;
 }
