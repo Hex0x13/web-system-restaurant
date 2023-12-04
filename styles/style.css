@@ -11,6 +11,8 @@ html, *, *::after, *::before {
     font-family: fredoka, 'Courier New', Courier, monospace;
 }
 
+
+
 body {
     height: 100vh;
     width: 100vw;
@@ -18,9 +20,10 @@ body {
 }
 
 h1 {
-    font-size: 46px;
+    font-size: clamp(30px, 5vw, 46px);
     color: rgb(235, 52, 119);
     text-shadow: 2px 2px rgb(0, 0, 0);
+    margin-right: auto;
 }
 
 body.home {
@@ -34,6 +37,10 @@ body.home {
 nav {
     background-color: transparent;
     height: 100px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 30px;
 }
 
 body:not(.home) nav {
@@ -41,28 +48,43 @@ body:not(.home) nav {
     box-shadow: 1px 1px 5px black;
 }
 
-main {
+main, main > div {
     width: 100%;
     height: 100%;
 }
 
-nav .my-nav-item {
+nav button {
     font-size: 20px;
+    font-family: fredoka, 'Courier New', Courier, monospace;
+    font-weight: 800;
     color: rgba(255, 255, 255, 0.6);
     transition: all 150ms;
     cursor: pointer;
+    margin: clamp(10px, 3vw, 20px);
 }
 
-.my-nav-item.active {
+nav button.active {
     color: white;
 }
 
-nav .my-nav-item:hover {
+nav button:hover {
     color: rgb(255, 167, 182);
 }
 
-nav .my-nav-item:active {
+nav button:active {
     transform: scale(0.98);
+}
+
+nav button {
+    background: none;
+    border: none;
+}
+
+.home-content > div {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
 }
 
 .main-text {
@@ -235,4 +257,119 @@ img[src="./image/chef.png"] {
 .tts-map {
     width: 100%;
     margin: auto;
+}
+
+.hidden {
+    display: none;
+}
+
+#disclaimer-msg {
+    background: rgba(36, 36, 36, 0.911);
+    position: fixed;
+    min-width: 400px;
+    min-height: 600px;
+    max-width: 800px;
+    max-height: 600px;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    padding: 50px;
+    overflow: auto;
+    border-radius: 15px;
+    animation: disclaimerMsg 500ms 1;
+}
+
+#disclaimer-msg * {
+    color: white;
+    text-align: center;
+}
+
+@keyframes disclaimerMsg {
+    0% {
+        width: 0px;
+        transform: scale(0) translate(-50%, -50%);
+    }
+    100% {
+        transform: scale(1) translate(-50%, -50%);
+        width: auto;
+    }
+}
+
+
+@media (max-width: 652px) {
+    nav {
+        display: flex;
+        flex-direction: column;
+    }
+
+    h1 {
+        font-size: clamp(20px, 5.5vw, 40px);
+        text-align: center;
+        margin: auto;
+    }
+
+    nav button {
+        text-shadow:
+        1px 1px rgba(0, 0, 0, 0.466), 
+        -1px 1px rgba(0, 0, 0, 0.466), 
+        1px -1px rgba(0, 0, 0, 0.466), 
+        -1px -1px rgba(0, 0, 0, 0.466);
+        font-size: clamp(10px, 3.5vw, 30px);
+    }
+
+    .main-menu>li {
+        margin: 5px;
+        min-width: 200px;
+        max-width: 400px;
+        flex: 1;
+    }
+
+    .main-menu > li p {
+        font-size: 13px;
+        color: rgb(8, 114, 133);
+        text-align: justify;
+        max-width: 300px;
+    }
+
+    .main-menu > li img {
+        object-position: center;
+        width: clamp(30px, 26vw, 120px);
+        height: clamp(30px, 26vw, 120px);
+        margin-right: 10px;
+    }
+
+    .main-text {
+        font-size: clamp(20px, 6vw, 45px);
+        max-width: 230px;
+    }
+
+    .main-text::after {
+        font-size: clamp(20px, 6vw, 44px);
+    }
+
+    .sub-text {
+        font-size: clamp(14px, 4.2vw, 38px);
+    }
+
+    .shop-address,
+    .open-hrs {
+        font-size: clamp(14px, 3.6vw, 20px);
+    }
+
+    .shop-address {
+        margin-bottom: 10px;
+    }
+
+    .order-now-btn {
+        font-size: clamp(8px, 2.5vw, 20px);
+    }
+
+    .menu-head {
+        font-size: clamp(20px, 6vw, 64px);
+    }
+
+    img[src="./image/chef.png"] {
+        height: clamp(10px, 6.2vw, 80px);
+        width: clamp(10px, 6.2vw, 80px);
+    }
 }
